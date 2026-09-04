@@ -1,0 +1,41 @@
+.syass__imglist {
+    max-height: 260px;
+    overflow-y: auto;
+    border: 1px solid var(--b3-theme-surface-light);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.syass__imgitem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+    border-bottom: 1px solid var(--b3-theme-surface-light);
+    font-size: 12px;
+}
+
+.syass__imgitem:last-child {
+    border-bottom: none;
+}
+
+.syass__imgname {
+    color: var(--b3-theme-on-surface);
+    word-break: break-all;
+    margin-right: 8px;
+}
+
+.syass__imgdim {
+    color: var(--b3-theme-secondary);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Persisted DOCX center alignment (set by custom-syass-align). */
+.protyle-wysiwyg [data-node-id][custom-syass-align="center"][data-type="NodeParagraph"] > [contenteditable="true"] {
+    text-align: center;
+}
+
+.protyle-wysiwyg [data-node-id][custom-syass-align="center"][data-type="NodeTable"] > table {
+    margin-inline: auto;
+}

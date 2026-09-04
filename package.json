@@ -1,0 +1,48 @@
+{
+  "name": "siyuan-assistant",
+  "version": "0.3.13",
+  "private": true,
+  "description": "SiYuan Assistant plugin: DOCX import, heading flatten, image width, section export, Word export.",
+  "author": "飞翰 / 狐公子",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "webpack --config webpack.config.js --mode production",
+    "dev": "webpack --config webpack.config.js --mode development",
+    "test": "esbuild src/docx.ts --bundle --format=cjs --outfile=/tmp/syass_docx.cjs --log-level=error && esbuild src/image-layout.ts --bundle --format=cjs --outfile=/tmp/syass_image_layout.cjs --log-level=error && esbuild src/blocks.ts --bundle --format=cjs --outfile=/tmp/syass_blocks.cjs --log-level=error && esbuild src/docxgen.ts --bundle --format=cjs --outfile=/tmp/syass_docxgen.cjs --log-level=error && node test/parse.test.mjs && node test/image-layout.test.mjs && node test/blocks.test.mjs && node test/docxgen.test.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "狐公子",
+  "license": "MIT",
+  "packageManager": "npm@10.9.8",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "docx": "^9.7.1",
+    "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.60.1",
+    "@typescript-eslint/parser": "^8.60.1",
+    "@xmldom/xmldom": "^0.9.12",
+    "copy-webpack-plugin": "^14.0.0",
+    "css-loader": "^7.1.4",
+    "dprint": "latest",
+    "esbuild-loader": "^4.4.3",
+    "eslint": "^10.4.1",
+    "globals": "^17.6.0",
+    "mini-css-extract-plugin": "^2.10.2",
+    "sass": "^1.100.0",
+    "sass-loader": "^17.0.0",
+    "siyuan": "1.2.4",
+    "tslib": "^2.8.1",
+    "typescript": "^6.0.3",
+    "webpack": "^5.107.2",
+    "webpack-cli": "^7.0.3",
+    "zip-webpack-plugin": "^4.0.3"
+  }
+}
